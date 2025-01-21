@@ -1,0 +1,10 @@
+# turn it into a format that is acceptable for whisper.cpp
+ffmpeg -i `input file` -af anull -ar 16000 -ac 1 -c:a pcm_s16le `output`
+
+# Transcribe the audio 
+
+/Users/kenminsoo/whisper.cpp/main -m /Users/kenminsoo/whisper.cpp/models/ggml-large-v3.bin -l en -ovtt -mc 0 -bo 8 -f 
+
+# Turn into art format
+
+ffmpeg -i `input name` `output name`
